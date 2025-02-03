@@ -36,6 +36,7 @@ contract DeploymentScript is Script {
     uint16 internal constant LIQUIDATION_COOL_OFF_TIME = 1;
     uint16 internal constant BORROW_LTV = 0.83e4;
     uint16 internal constant LIQUIDATION_LTV = 1e4 - 1;
+    // 5% APY: floor(((5 / 100 + 1)**(1/(86400*365.2425)) - 1) * 1e27)
     uint256 internal constant BASE_INTEREST_RATE_5_PERCENT = 1546098755264741952;
 
     function run() public {

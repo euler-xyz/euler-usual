@@ -3,10 +3,10 @@
 pragma solidity ^0.8.0;
 
 import {Script} from "forge-std/Script.sol";
-import {HookTarget} from "../src/HookTarget.sol";
 import {EulerRouter} from "epo/EulerRouter.sol";
 import {GenericFactory} from "evk/GenericFactory/GenericFactory.sol";
 import {EulerKinkIRMFactory} from "evk-periphery/IRMFactory/EulerKinkIRMFactory.sol";
+import {HookTargetAccessControl} from "evk-periphery/HookTarget/HookTargetAccessControl.sol";
 import {IEVault} from "evk/EVault/IEVault.sol";
 import {IEulerRouterFactory} from "evk-periphery/EulerRouterFactory/interfaces/IEulerRouterFactory.sol";
 import "evk/EVault/shared/Constants.sol";
@@ -29,7 +29,6 @@ contract DeploymentScript is Script {
     address internal constant USD0PPUSD = 0x16a8760feB814AfC9e3748d09A46f602C8Ade027;
 
     // Usual addresses
-    address internal constant TREASURY = address(0); // TODO: set
     address internal constant GOVERNOR = address(0); // TODO: set
 
     // vault parameters
@@ -59,8 +58,8 @@ contract DeploymentScript is Script {
         eUSD0.setLiquidationCoolOffTime(LIQUIDATION_COOL_OFF_TIME);
         eUSD0.setInterestRateModel(irmFactory.deploy(BASE_INTEREST_RATE_5_PERCENT, 0, 0, type(uint32).max));
         eUSD0.setHookConfig(
-            address(new HookTarget(EVC, GOVERNOR, address(eVaultFactory), address(eUSD0), TREASURY)),
-            OP_DEPOSIT | OP_MINT | OP_SKIM | OP_LIQUIDATE | OP_FLASHLOAN | OP_VAULT_STATUS_CHECK
+            address(new HookTargetAccessControl(EVC, GOVERNOR, address(eVaultFactory))),
+            OP_DEPOSIT | OP_MINT | OP_SKIM | OP_LIQUIDATE | OP_FLASHLOAN
         );
         eUSD0.setConfigFlags(CFG_DONT_SOCIALIZE_DEBT);
         eUSD0.setLTV(address(eUSD0PP), BORROW_LTV, LIQUIDATION_LTV, 0);

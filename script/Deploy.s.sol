@@ -31,6 +31,7 @@ contract DeploymentScript is Script {
     // Usual addresses
     address internal constant GOVERNOR = 0x81ad394C0Fa87e99Ca46E1aca093BEe020f203f4; // USUAL Yield Treasury, visible here: https://tech.usual.money/smart-contracts/contract-deployments
 
+
     // vault parameters
     uint16 internal constant LIQUIDATION_COOL_OFF_TIME = 1;
     uint16 internal constant BORROW_LTV = 0.83e4;

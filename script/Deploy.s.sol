@@ -29,7 +29,7 @@ contract DeploymentScript is Script {
     address internal constant USD0PPUSD = 0x16a8760feB814AfC9e3748d09A46f602C8Ade027;
 
     // Usual addresses
-    address internal constant GOVERNOR = address(0x81ad394c0fa87e99ca46e1aca093bee020f203f4); // USUAL Yield Treasury, visible here: https://tech.usual.money/smart-contracts/contract-deployments
+    address internal constant GOVERNOR = 0x81ad394C0Fa87e99Ca46E1aca093BEe020f203f4; // USUAL Yield Treasury, visible here: https://tech.usual.money/smart-contracts/contract-deployments
 
     // vault parameters
     uint16 internal constant LIQUIDATION_COOL_OFF_TIME = 1;
@@ -38,7 +38,7 @@ contract DeploymentScript is Script {
     // 5% APY: floor(((5 / 100 + 1)**(1/(86400*365.2425)) - 1) * 1e27)
     uint256 internal constant BASE_INTEREST_RATE_5_PERCENT = 1546098755264741952;
 
-    function run() public {
+    function run() public virtual {
         vm.startBroadcast();
 
         // deploy and configure the oracle router

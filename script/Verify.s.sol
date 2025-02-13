@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import {Script} from "forge-std/Script.sol";
+import {Script, console} from "forge-std/Script.sol";
 import {GenericFactory} from "evk/GenericFactory/GenericFactory.sol";
 import {EulerRouter} from "epo/EulerRouter.sol";
 import {IRMLinearKink} from "evk/InterestRateModels/IRMLinearKink.sol";
@@ -29,6 +29,8 @@ contract VerifyVaultConfig is DeploymentScript {
     function run() public view override {
         verifyUSD0();
         verifyUSD0PP();
+
+        console.log("Configuration of USD0 and USD0++ vaults verified correctly");
     }
 
     function verifyUSD0() internal view {

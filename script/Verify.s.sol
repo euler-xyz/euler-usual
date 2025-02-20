@@ -3,7 +3,6 @@
 pragma solidity ^0.8.0;
 
 import {Script, console} from "forge-std/Script.sol";
-import {GenericFactory} from "evk/GenericFactory/GenericFactory.sol";
 import {EulerRouter} from "epo/EulerRouter.sol";
 import {IRMLinearKink} from "evk/InterestRateModels/IRMLinearKink.sol";
 import {EulerKinkIRMFactory} from "evk-periphery/IRMFactory/EulerKinkIRMFactory.sol";

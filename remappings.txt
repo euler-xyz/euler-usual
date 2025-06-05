@@ -1,3 +1,4 @@
+@openzeppelin/=lib/openzeppelin-contracts/
 openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/
 openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/
 ethereum-vault-connector/=lib/ethereum-vault-connector/src/

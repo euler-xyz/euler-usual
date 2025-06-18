@@ -26,14 +26,14 @@ contract DeploymentScript is Script {
 
     // predeployed oracle adapters
     address internal constant USD0USD = 0x83e0698654dF4bC9F888c635ebE1382F0E4F7a61;
-    address internal constant PT_USD0PPUSD = 0x4a35Fe57388D8E637690ED27D744917A6FB205AF;
+    address internal constant PT_USD0PPUSD = 0x62b1dEb38EaD3fE18110f0EeD52E04626DB25F61;
 
     // Usual addresses
     address internal constant GOVERNOR = 0x81ad394C0Fa87e99Ca46E1aca093BEe020f203f4; // USUAL Yield Treasury, visible here: https://tech.usual.money/smart-contracts/contract-deployments
 
     // vault parameters
     uint16 internal constant LIQUIDATION_COOL_OFF_TIME = 1;
-    uint16 internal constant BORROW_LTV = 0.80e4;
+    uint16 internal constant BORROW_LTV = 0.965e4;
     uint16 internal constant LIQUIDATION_LTV = 1e4 - 1;
     // 7% APY: floor(((7 / 100 + 1)**(1/(86400*365.2425)) - 1) * 1e27)
     uint256 internal constant BASE_INTEREST_RATE_7_PERCENT = 2144017221509398594;

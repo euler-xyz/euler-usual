@@ -26,7 +26,7 @@ contract DeploymentScript is Script {
 
     // predeployed oracle adapters
     address internal constant USD0USD = 0x83e0698654dF4bC9F888c635ebE1382F0E4F7a61;
-    address internal constant PT_USD0PPUSD = 0xd988620a4dCFaFa5d10A69b7bD1A296BE26DdEe9;
+    address internal constant PT_USD0PPUSD = 0x4a35Fe57388D8E637690ED27D744917A6FB205AF;
 
     // Usual addresses
     address internal constant GOVERNOR = 0x81ad394C0Fa87e99Ca46E1aca093BEe020f203f4; // USUAL Yield Treasury, visible here: https://tech.usual.money/smart-contracts/contract-deployments
